@@ -1,0 +1,396 @@
+@import 'tags';
+
+@font-face{ 
+	font-family: 'websymbols';
+	src: url('fonts/websymbols-regular-webfont.eot');
+	src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/websymbols-regular-webfont.woff') format('woff'),
+	     url('fonts/websymbols-regular-webfont.ttf') format('truetype'),
+	     url('fonts/websymbols-regular-webfont.svg#webfont') format('svg');
+}
+ 
+.websymbols {
+  font-family: "websymbols";
+  font-size: 1em;
+  font-style: normal;
+}
+
+/* LEFT SIDE: EDITOR */
+#editor {
+
+}
+
+textarea {
+  width: 100%;
+}
+
+#tools {
+  margin-top: 20px;
+}
+
+#tools .toolbutton {
+  width: auto;  
+  float: left;
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+
+/* RIGHT SIDE: PREVIEW */
+#preview {
+  min-height: 408px;
+  clear: both;
+}
+
+.preview-title {
+  float: left;
+  margin: 0 0 20px 0;
+}
+
+
+/* CONTENT STYLING */
+#preview p, dt, dd {
+font-size: 12px;
+line-height: 15px;
+text-align: justify;
+margin-bottom: 10px;
+}
+
+#preview pre, blockquote {
+line-height: 1.714em;
+margin-bottom: 1.714em;
+}
+
+#preview h1 {
+font-size: 24px;
+line-height: 30px;
+margin-top: 20px;
+margin-bottom: 15px;
+}
+
+#preview h2 {
+font-size: 20px;
+line-height: 24px;
+margin-top: 14px;
+margin-bottom: 10px;
+}
+
+#preview h3 {
+font-size: 14px;
+line-height: 18px;
+margin-top: 10px;
+margin-bottom: 8px;
+}
+
+#preview h4 {
+font-size: 12px;
+line-height: 14px;
+margin-top: 10px;
+margin-bottom: 8px;
+}
+
+#preview hr {
+margin-top: 1.6em;
+}
+
+#preview input {
+font-size: 1.0em;
+}
+
+#preview ul {
+list-style: square;
+}
+
+#preview li {
+padding-bottom: 10px;
+}
+#preview a {
+color: #069;
+text-decoration: none;
+}
+#preview a:hover {
+text-decoration: underline;
+}
+
+#preview blockquote {
+  margin-left: 5px;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid #999;
+  background-color: #eee;
+}
+
+#preview code, pre {
+  font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+  background-color: #eee;
+  font-size: 1.0em;
+}
+
+#preview pre {
+  padding: 5px;
+  margin-left: 5px;
+  display: block;
+  width: auto;
+  overflow: auto !important;
+}
+
+/* HAX: Disable all borders from prettify */
+#preview pre *, #preview code {
+  border: none !important;
+}
+
+#preview code {
+  display: inline;
+}
+
+#preview ul, #preview ol {
+  margin-left: 20px;
+}
+
+#footer {
+  height: 20px;
+  width: 100%;
+  
+  position: fixed;
+  bottom: 0px;
+
+  padding: 10px;
+  
+  border-top: 1px solid #999;
+  
+  background-color: #333;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+#footer a {
+  color: #aaa;
+}
+
+
+
+
+/* WMD STYLES */
+.wmd-input {
+    display: block;
+    clear: left;
+}
+div.wmd-toolbar {
+    margin: 5px 0 20px;
+    height: 24px;
+    float: left;
+}
+ul.wmd-toolbar {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+// Dialog box
+// ----------
+.wmd-dialog {
+  @extend .modal;
+}
+.wmd-form {
+    margin: 0;
+    padding: 0;
+}
+.wmd-form fieldset {
+//     margin: 10px 20px;
+//     padding: 0;
+//     border: none;
+}
+.wmd-legend {
+    @extend .modal-header;
+}
+.wmd-legend p {
+//     color: #666;
+//     font-family: Verdana,Arial,Helvetica,Geneva,SunSans-Regular,sans-serif;
+//     font-size: .533em;
+//     margin: 0;
+}
+.wmd-form .wmd-field {
+  @extend .modal-body;
+  padding: 9px 15px;
+}
+.wmd-form .wmd-field:last-child {
+  @extend .modal-footer;
+}
+.wmd-fieldlabel {
+    display: block;
+    font-size: .9em;
+    font-weight: bold;
+    margin-bottom: .25em;
+}
+.wmd-fieldlabel em {
+    color: #F00;
+}
+.wmd-fieldinput {
+    font-size: 100%;
+}
+input.wmd-fieldinput,textarea.wmd-fieldinput {
+//     width: 99%;
+//     border-color: #7C7C7C #C3C3C3 #DDD;
+//     border-style: solid;
+//     border-width: 1px;
+//     padding: .2em 0;
+}
+.wmd-fieldbutton {
+  @extend .btn;
+}
+.wmd-fieldbutton[class] {
+    width: auto;
+}
+.wmd-fielderror {
+    background: #FFDFDF;
+    border: 1px solid #F9B9B2;
+}
+.wmd-fielderror .wmd-fieldlabel {
+    color: #DF0000;
+}
+.wmd-fieldreason {
+    color: #F00;
+    font-size: .65em;
+    font-weight: bold;
+}
+.wmd-command {
+  @extend .btn;
+}
+.wmd-command-over, .wmd-command:hover {
+  @extend .btn:hover;
+}
+.wmd-command-down {
+  @extend .btn.active;
+}
+.wmd-spacer {
+    width: 1px;
+    margin: 4px 10px;
+    border: none;
+    border-left: solid 1px #CCC;
+    height: 22px;
+    @include border-radius(0px);
+    background: none;
+    padding: 0;
+}
+.wmd-form .note {
+  clear: both;
+  float: left;
+}
+.wmd-command span {
+    margin-left: -10000px;
+    float: left;
+}
+.wmd-strong {
+    background-position: 0 0;
+}
+.wmd-strong-down {
+    background-position: 0 bottom;
+}
+.wmd-em {
+    background-position: -22px 0;
+}
+.wmd-em-down {
+    background-position: -22px bottom;
+}
+.wmd-a {
+    background-position: -44px 0;
+}
+.wmd-a-down {
+    background-position: -44px bottom;
+}
+.wmd-blockquote {
+    background-position: -66px 0;
+}
+.wmd-blockquote-down {
+    background-position: -66px bottom;
+}
+.wmd-code {
+    background-position: -88px 0;
+}
+.wmd-code-down {
+    background-position: -88px bottom;
+}
+.wmd-img {
+    background-position: -110px 0;
+}
+.wmd-img-down {
+    background-position: -110px bottom;
+}
+.wmd-ol {
+    background-position: -132px 0;
+}
+.wmd-ol-down {
+    background-position: -132px bottom;
+}
+.wmd-ul {
+    background-position: -154px 0;
+}
+.wmd-ul-down {
+    background-position: -154px bottom;
+}
+.wmd-h {
+    background-position: -176px 0;
+}
+.wmd-h-down {
+    background-position: -176px bottom;
+}
+.wmd-hr {
+    background-position: -198px 0;
+}
+.wmd-hr-down {
+    background-position: -198px bottom;
+}
+
+
+
+
+/* Pretty print for synax hilighting */
+
+.prettyprint {
+  padding: 0px !important; /* Hack for inline code */
+}
+.prettyprint.theme-balupton .com {
+  color: #008200; /* balupton green */
+}
+.prettyprint.theme-balupton .lit {
+  color: #066; /* google green */
+}
+.prettyprint.theme-balupton.lang-html .lit {
+  /* CSS Property Value */
+  color: #066; /* google green */
+}
+.prettyprint.theme-balupton.lang-html .kwd {
+  /* CSS Property Value Keyword */
+  color: #066; /* google green */
+  font-weight: bold;
+}
+.prettyprint.theme-balupton.lang-html .atv + .pln,
+.prettyprint.theme-balupton.lang-html .pun + .pln {
+  /* CSS Property Name */
+  color: blue;
+}
+.prettyprint.theme-balupton .atv,
+.prettyprint.theme-balupton .str {
+  color: blue;
+}
+.prettyprint.theme-balupton .atn {
+  color: gray;
+}
+.prettyprint.theme-balupton .pln {
+  color: black;
+}
+.prettyprint.theme-balupton .pun {
+  color: #666;
+}
+.prettyprint.theme-balupton .typ {
+  color: #606;
+}
+.prettyprint.theme-balupton .tag,
+.prettyprint.theme-balupton .kwd {
+  color: #006699;
+  font-weight: bold;
+}

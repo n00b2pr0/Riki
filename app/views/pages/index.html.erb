@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="span12">
+		<h1>Pages</h1>
+		<hr>
+		<ul>
+		  <% @pages.each do |p| %>
+		    <li><%= link_to p.title, page_path(p) %></li>
+		  <% end %>
+		</ul>	
+	</div>
+</div>
+
+<!-- jQuery listener for syntax highlight -->
+<script type="text/javascript">
+$(document).ready(function() {
+  $.SyntaxHighlighter.init({
+    'load': true,
+    'lineNumbers': false,
+    'highlight': true,
+    'debug': true
+  });
+});
+</script>

@@ -1,0 +1,1 @@
+# Riki - A Simple Ruby on Rails Wiki

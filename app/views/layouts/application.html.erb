@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Riki</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= csrf_meta_tags %>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<%= javascript_include_tag "application" %>
+	<script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+
+	<style>
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	.navbar {
+		background: url("assets/paven.png");
+	}
+	.navbar-inner {
+		background-color: rgba(0,0,0,.5);
+	}
+	</style>
+    
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="/">Riki</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<!--<li class="active"><a href="/">Home</a></li>
+							<li><a href="/pages/manage">Manage</a></li>-->
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+
+		<% flash.each do |name, msg| %>                 
+		  <%= content_tag :div, raw(msg), :class => "flash alert alert-#{name}" %>
+		<% end %>
+
+		<div class="container">
+
+			<%= yield %>
+
+			<hr>
+
+			<footer>
+				<p>&copy; <%= Time.new.year %> - Radiate Media WebOps Team</p>
+			</footer>
+
+		</div> <!-- /container -->
+</body>
+</html>
