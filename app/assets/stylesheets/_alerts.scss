@@ -30,7 +30,8 @@
 // Alternate styles
 // ----------------
 
-.alert-success {
+.alert-success,
+.alert-notice{
   background-color: $successBackground;
   border-color: $successBorder;
   color: $successText;
