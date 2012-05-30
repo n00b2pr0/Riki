@@ -50,6 +50,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def history
+    @page = Page.find(params[:id])
+    @histories = Version.where(item_type: "Page", item_id: @page.id)
+  end
   private
 
   def undo_link
