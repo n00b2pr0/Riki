@@ -1,7 +1,8 @@
 class Page < ActiveRecord::Base
   has_paper_trail
-
   has_many :tags
+  validates_presence_of :title
+
 
   def self.pages_by_tag(string)
     pages = []

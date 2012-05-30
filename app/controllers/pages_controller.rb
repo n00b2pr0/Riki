@@ -42,7 +42,6 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    logger.debug "++++++++++++++++++++++++++++++++++++"
     @page = Page.find(params[:id])
     if @page.destroy
       redirect_to root_path, :notice => "page deleted #{undo_link}"
