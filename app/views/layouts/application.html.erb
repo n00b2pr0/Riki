@@ -24,7 +24,7 @@
 		padding-bottom: 40px;
 	}
 	.navbar {
-		background: url("assets/paven.png");
+		
 	}
 	.navbar-inner {
 		background-color: rgba(0,0,0,.5);
@@ -43,11 +43,35 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="/">Riki</a>
+					<a class="brand" href="/pages">Riki</a>
 					<div class="nav-collapse">
 						<ul class="nav">
 							<!--<li class="active"><a href="/">Home</a></li>
 							<li><a href="/pages/manage">Manage</a></li>-->
+						</ul>
+
+						<ul id="account-menu" class="nav pull-right">
+							<li class="dropdown">
+								<% if current_user %>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-user icon-white" style="opacity: .4"></i> 
+										<%= current_user.name %>
+										<b class="caret"></b>
+									</a>
+
+									<ul class="dropdown-menu">
+										<!-- <li id="account">&nbsp;<a href="/pages/account/?"><i class="icon-cog"></i>My Account</a></li> 
+										<li class="divider"></li>-->
+										<li>
+											<%= link_to signout_path do %>
+						                        <i class="icon-off"></i> Sign Out
+						                    <% end %>
+										</li>
+									</ul>
+								<% else %>
+									
+								<% end %>
+							</li>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div>

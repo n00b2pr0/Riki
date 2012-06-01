@@ -1,3 +1,19 @@
-<% @histories.each do |history| %>
-  <%= history.event %>
-<% end %>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Event</th>
+			<th>Time</th>
+			<th>User</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @histories.each do |history| %>
+	  <tr>
+	  	<td><%= history.event %></td>
+		<td><%= history.created_at %></td>
+		<td><%= history.whodunnit %></td>
+	  </tr>
+	  <br />
+	<% end %>
+	</tbody>
+</table>

@@ -1,6 +1,10 @@
 Riki::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # == Omniauth keys
+  GOOGLE_KEY = '582417993967-82k7p48au7i6pr66ifnu1mfvagdeabf5.apps.googleusercontent.com'
+  GOOGLE_SECRET = 'Ezu0qIhuf08gS5W1eZ8Evghy'
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

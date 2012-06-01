@@ -4,6 +4,5 @@
 //= require bootstrap
 //= require showdown
 //= require wmd
-//= require history
 //= require tag
 //= require script

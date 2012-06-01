@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="span6">
+    <p>
+      <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+      or
+      <%= link_to "Create an account", new_identity_path %> or login below.
+    </p>
+
+    <%= form_tag "/auth/identity/callback", :class => "form" do %>
+
+      <%= label_tag :auth_key, "Email" %>
+      <%= text_field_tag :auth_key %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+
+      <div class="form-actions"><%= submit_tag "Login", :class => "btn" %></div>
+    <% end %>    
+  </div>
+</div>
