@@ -11,10 +11,24 @@
 </div>
 
 <div class="row">
-  <div class="span12">
-    <h1><%= @page.title %></h1>
-    <hr>
-    <p><%= markdown(@page.body) %></p>
+  <h1><%= @page.title %></h1>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <%= markdown(@page.body) %>
+  </div>
+
+  <div class="span4">
+    <div class="well">
+      <ul class="unstyled">
+        <li><strong>Last Updated:</strong> <%= @page.updated_at %></li>
+        <li><strong>Created on:</strong> <%= @page.created_at %></li>
+      </ul>
+    </div>
+
+    <h2>Image</h2>
     <ul class="thumbnails">
       <li class="span3">
         <%= link_to @page.image.url, class: "thumbnail" do %>

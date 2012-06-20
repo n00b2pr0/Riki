@@ -44,6 +44,14 @@
         <% end %>
       </li>
     </ul>
+
+    <div class="input-prepend">
+      <span class="add-on">Thumb&nbsp;</span><input class="" size="16" type="text" value="<%= @page.image.url(:thumb) %>">
+    </div>
+
+    <div class="input-prepend">
+      <span class="add-on">Original</span><input class="" size="16" type="text" value="<%= @page.image.url %>">
+    </div>
   </div><!-- /.span -->
 </div><!-- /.row -->
 
