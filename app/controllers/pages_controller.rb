@@ -6,6 +6,11 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find(params[:id])
+    @tags = ""
+    @page.tags.each do |t|
+      @tags << t.tag_name
+      @tags << ""
+    end
   end
 
   def new
@@ -18,7 +23,7 @@ class PagesController < ApplicationController
       @page.add_tags(params[:tags])
       redirect_to page_path(@page), :notice => "page saved #{undo_link}"
     else
-      redirect_to new_page_path, :notice => "page not saved" 
+      redirect_to new_page_path, :notice => "page not saved"
     end
   end
 
@@ -27,7 +32,7 @@ class PagesController < ApplicationController
     @tags = ""
     @page.tags.each do |t|
       @tags << t.tag_name
-      @tags << " "
+      @tags << ","
     end
   end
 
@@ -38,7 +43,7 @@ class PagesController < ApplicationController
       @page.add_tags(params[:tags])
       redirect_to page_path(@page), :notice => "page saved #{undo_link}"
     else
-      redirect_to new_page_path, :notice => "page not saved" 
+      redirect_to new_page_path, :notice => "page not saved"
     end
   end
 
@@ -55,7 +60,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @histories = Version.where(item_type: "Page", item_id: @page.id)
   end
-  
+
   private
 
   def undo_link

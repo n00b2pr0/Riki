@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   def user_for_paper_trail
     current_user ? current_user.name : 'Public user'
-    # logged_in? ? current_member : 'Public user'  # or whatever
   end
 
   private

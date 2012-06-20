@@ -11,8 +11,10 @@
 </div>
 
 <div class="row">
-  <h1><%= @page.title %></h1>
-  <hr>
+  <div class="span12">
+    <h1><%= @page.title %> <small><%= @page.category %></small></h1>
+    <hr>
+  </div>
 </div>
 
 <div class="row">
@@ -25,6 +27,7 @@
       <ul class="unstyled">
         <li><strong>Last Updated:</strong> <%= @page.updated_at %></li>
         <li><strong>Created on:</strong> <%= @page.created_at %></li>
+        <li><strong>Tags:</strong> <span class="tag-array">,<%= @tags %></span></li>
       </ul>
     </div>
 
@@ -38,3 +41,10 @@
     </ul>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var tagLabel = $('.tag-array').text().split(",").join('</span> <span class=\"label label-info\">');
+    $('.tag-array').html(tagLabel)
+  });
+</script>

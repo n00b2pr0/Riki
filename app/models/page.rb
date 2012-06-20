@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   has_paper_trail
   has_many :tags
-  validates_presence_of :title
+  validates_presence_of :title, :category
   mount_uploader :image, ImageUploader
 
 

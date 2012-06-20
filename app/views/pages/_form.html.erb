@@ -1,6 +1,6 @@
 <div class="row">
   <div id="editor" class="span6">
-    <div id="toolbar" class="wmd-toolbar"></div>
+    <div id="toolbar" class="wmd-toolbar btn-toolbar"></div>
 
     <div class="clearfix"></div>
 
@@ -13,19 +13,25 @@
       <%= f.text_field :title %>
 
       <%= f.label :category %>
-      <%= f.select(:category, ['Widget', 'Global Parameter', 'Push Parameter', 'Other Parameter'], {}, { :class => '' }) %>
+      <%= f.select(:category, ['', 'Widget', 'Global Parameter', 'Push Parameter', 'Site Setting', 'Other Parameter'], {}, { :class => '' }) %>
 
       <%= f.label :body %>
       <%= f.text_area :body, id: "input", class: "wmd-input" %>
 
-      <%= f.label :image, "Upload image" %>
-      <%= f.file_field :image %>
-
-      <%= f.label :remote_image_url, "or image url" %>
-      <%= f.text_field :remote_image_url %>
+      <div class="row">
+        <div class="span3">
+          <%= f.label :image, "Upload image" %>
+          <%= f.file_field :image %>
+        </div>
+        <div class="span3">
+          <%= f.label :remote_image_url, "or image url" %>
+          <%= f.text_field :remote_image_url %>
+        </div>
+      </div>
 
       <label>Tags</label>
-      <input type="text" name="tags" class="tag_list" value="<%= @tags %>">
+      <input type="text" name="tags" id="tags" class="tag_list" value="<%= @tags %>">
+
       <div class="form-actions">
         <%= f.submit class: "btn btn-success" %>
       </div>
@@ -62,7 +68,7 @@
   <!-- jQuery listener for syntax highlight -->
   <script type="text/javascript">
   $(document).ready(function() {
-    //$('.tag_list').tagsInput();
+    $('#tags').tagsInput();
     $("#highlightCode").click(function(){
       $.SyntaxHighlighter.init({
       'load': true,
@@ -89,5 +95,7 @@ window.onload = function() {
   $('<i class="websymbols">T</i>').prependTo(".wmd-h");
   $('<i class="icon-minus"></i>').prependTo(".wmd-hr");
   $('<li class="wmd-command wmd-spacer"></li><li id="highlightCode" class="btn"><i class="icon-tint"></i></li>').insertAfter(".wmd-hr");
+
+  $('ul.wmd-toolbar').addClass('btn-group');
 };
 </script>
