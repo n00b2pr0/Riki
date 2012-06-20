@@ -1,4 +1,5 @@
 class HistoryController < ApplicationController
+  before_filter :should_be_logged_in
   def revert
     @history = Version.find(params[:id])
 

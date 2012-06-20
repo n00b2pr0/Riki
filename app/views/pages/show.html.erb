@@ -15,5 +15,12 @@
     <h1><%= @page.title %></h1>
     <hr>
     <p><%= markdown(@page.body) %></p>
+    <ul class="thumbnails">
+      <li class="span3">
+        <%= link_to @page.image_url.to_s, class: "thumbnail" do %>
+          <%= image_tag @page.image_url(:thumb).to_s %>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </div>

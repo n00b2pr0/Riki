@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :should_be_logged_in
   def index
     @pages = Page.all
   end
