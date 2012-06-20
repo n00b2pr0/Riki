@@ -39,9 +39,9 @@
     <h2>Current Image</h2>
     <ul class="thumbnails">
       <li class="span3">
-        <a href="<%= link_to @page.image_url.to_s %>" class="thumbnail">
-          <%= image_tag @page.image_url(:thumb).to_s %>
-        </a>
+        <%= link_to @page.image.url, class: "thumbnail" do %>
+          <%= image_tag @page.image.url(:thumb) %>
+        <% end %>
       </li>
     </ul>
   </div><!-- /.span -->
