@@ -45,6 +45,15 @@
 <script type="text/javascript">
   $(document).ready(function() {
     var tagLabel = $('.tag-array').text().split(",").join('</span> <span class=\"label label-info\">');
-    $('.tag-array').html(tagLabel)
+    var comma = $('.tag-array').text().length;
+
+    $(function() {
+      if (comma <= 1) {
+        $('.tag-array').html('No tags');
+      }
+      else {
+        $('.tag-array').html(tagLabel);
+      }
+    });
   });
 </script>

@@ -49,11 +49,13 @@ class PagesController < ApplicationController
 
   def destroy
     @page = Page.find(params[:id])
-    if @page.destroy
-      redirect_to root_path, :notice => "page deleted #{undo_link}"
-    else
-      redirect_to root_path, :notice => "page not deleted"
-    end
+    @page.destroy
+    redirect_to pages_path, :notice => "page deleted #{undo_link}"
+    # if @page.destroy
+    #   redirect_to pages_path, :notice => "page deleted #{undo_link}"
+    # else
+    #   redirect_to :back, :notice => "page not deleted"
+    # end
   end
 
   def history

@@ -10,7 +10,7 @@ function selectAll() {
 function copyAll() {
   alert("Not implemented yet!");
 }
-  
+
 // http://stackoverflow.com/questions/985272/jquery-selecting-text-in-an-element-akin-to-highlighting-with-your-mouse/2838358#2838358
 function selectElementText(el, win) {
     win = win || window;

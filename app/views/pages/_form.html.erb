@@ -1,7 +1,6 @@
 <div class="row">
   <div id="editor" class="span6">
     <div id="toolbar" class="wmd-toolbar btn-toolbar"></div>
-
     <div class="clearfix"></div>
 
   <!-- <button id="selectall" class="toolbutton" onclick="selectAll();">Select all preview text</button>
@@ -9,10 +8,14 @@
 
 
     <%= form_for(@page, :html => { :class => "form form-stacked", :multipart => true } ) do |f| %>
-      <%= f.label :title %>
+      <%= f.label :title do %>
+        Title <span id="title-required" class="label label-important">required</span>
+      <% end %>
       <%= f.text_field :title %>
 
-      <%= f.label :category %>
+      <%= f.label :category do %>
+      Category <span id="category-required" class="label label-important">required</span>
+      <% end %>
       <%= f.select(:category, ['', 'Widget', 'Global Parameter', 'Push Parameter', 'Site Setting', 'Other Parameter'], {}, { :class => '' }) %>
 
       <%= f.label :body %>
@@ -76,6 +79,29 @@
       'highlight': true,
       'debug': true
       });
+    });
+
+    $(function() {
+      $('#page_title').change(function () {
+        var $this = $('#page_title');
+        if ($this.val() < 1) {
+          $('#title-required').show();
+        } else {
+          $('#title-required').hide();
+        }
+      });
+
+      $('#page_category').change(function () {
+        var $this = $('#page_category');
+        if ($this.val() < 1) {
+          $('#category-required').show();
+        } else {
+          $('#category-required').hide();
+        }
+      });
+
+      $('#page_title').trigger('change');
+      $('#page_category').trigger('change');
     });
   });
   </script>
