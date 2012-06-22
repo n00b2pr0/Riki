@@ -1,9 +1,15 @@
 class Page < ActiveRecord::Base
   has_paper_trail
   has_many :tags
+  belongs_to :categories
   validates_presence_of :title, :category
   mount_uploader :image, ImageUploader
 
+  define_index do
+    indexes :title, sortable: true
+    indexes :body
+    set_property :group_concat_max_len => 8192
+  end
 
   def self.pages_by_tag(string)
     pages = []

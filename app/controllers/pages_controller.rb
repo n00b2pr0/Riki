@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   before_filter :should_be_logged_in
+
   def index
-    @pages = Page.all
+    @pages = Page.search(params[:search])
   end
 
   def show

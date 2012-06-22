@@ -16,3 +16,6 @@
 
 # Ignore locally uploaded images
 /public/uploads
+
+# Ignore all tests
+/test

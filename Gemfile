@@ -22,6 +22,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-identity'
 
+# searching
+gem 'thinking-sphinx',
+  :git => 'git://github.com/freelancing-god/thinking-sphinx.git',
+  :ref => '8f0e34b4a68494738d8dd5a1cb6bcf379adbf640'
+
 # markdown rendering & syntax higlighting
 gem 'redcarpet'
 gem 'albino'

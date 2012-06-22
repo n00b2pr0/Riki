@@ -16,7 +16,7 @@
       <%= f.label :category do %>
       Category <span id="category-required" class="label label-important">required</span>
       <% end %>
-      <%= f.select(:category, ['', 'Widget', 'Global Parameter', 'Push Parameter', 'Site Setting', 'Other Parameter'], {}, { :class => '' }) %>
+      <%= f.select("category", Category.all.collect {|p| [ p.category_name ] }, {:include_blank => true}) %>
 
       <%= f.label :body %>
       <%= f.text_area :body, id: "input", class: "wmd-input" %>

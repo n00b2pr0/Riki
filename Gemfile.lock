@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/freelancing-god/thinking-sphinx.git
+  revision: 8f0e34b4a68494738d8dd5a1cb6bcf379adbf640
+  ref: 8f0e34b4a68494738d8dd5a1cb6bcf379adbf640
+  specs:
+    thinking-sphinx (2.0.10)
+      activerecord (>= 3.0.3)
+      builder (>= 2.1.2)
+      riddle (>= 1.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,6 +114,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.1.1)
+    riddle (1.5.2)
     rmagick (2.13.1)
     sass (3.1.19)
     sass-rails (3.2.5)
@@ -141,3 +152,4 @@ DEPENDENCIES
   rmagick
   sass-rails
   therubyracer
+  thinking-sphinx!
