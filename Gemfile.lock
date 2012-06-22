@@ -49,6 +49,7 @@ GEM
     erubis (2.7.0)
     faraday (0.8.1)
       multipart-post (~> 1.1)
+    has_permalink (0.1.4)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.1)
@@ -141,6 +142,7 @@ DEPENDENCIES
   albino
   bcrypt-ruby (~> 3.0.0)
   carrierwave
+  has_permalink
   jquery-rails
   mysql2
   nokogiri

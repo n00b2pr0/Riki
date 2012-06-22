@@ -27,6 +27,9 @@ gem 'thinking-sphinx',
   :git => 'git://github.com/freelancing-god/thinking-sphinx.git',
   :ref => '8f0e34b4a68494738d8dd5a1cb6bcf379adbf640'
 
+# urls
+gem 'has_permalink'
+
 # markdown rendering & syntax higlighting
 gem 'redcarpet'
 gem 'albino'
