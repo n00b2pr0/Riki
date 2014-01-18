@@ -1,9 +1,4 @@
 //= require jquery
-//= require jquery_ujs
-//= require modernizr
-//= require bootstrap
-//= require showdown
-//= require wmd
-//= require history
-//= require tag
-//= require script
+//= require_directory './lib'
+//= require_directory './lib/extensions'
+//= require global

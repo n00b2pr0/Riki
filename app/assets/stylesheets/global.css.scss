@@ -1,0 +1,50 @@
+@font-face{ 
+  font-family: 'websymbols';
+  src: url('fonts/websymbols-regular-webfont.eot');
+  src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/websymbols-regular-webfont.woff') format('woff'),
+       url('fonts/websymbols-regular-webfont.ttf') format('truetype'),
+       url('fonts/websymbols-regular-webfont.svg#webfont') format('svg');
+}
+
+
+// now import
+@import 'gumby';
+@import 'tags';
+ 
+.websymbols {
+  font-family: "websymbols";
+  font-size: 1em;
+  font-style: normal;
+}
+
+.preview, .page {
+  li { list-style-type: disc; margin-left: 20px; }
+  code { font-family: Consolas; border: 1px solid #DDDDDD; padding: 10px; border-radius: 5px; }
+}
+
+.sub.navbar {
+  background: #E9E9E9;
+  margin-top: -20px;
+
+  li {
+    a { color: #555555; text-shadow: none; }
+  }
+}
+
+table thead {
+  background-color: #E9E9E9;
+  color: #444444;
+}
+
+.flash {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  @extend .alert.danger;
+}
+
+.page-header {
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 20px;
+}

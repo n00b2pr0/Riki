@@ -1,0 +1,12 @@
+.row
+  .twelve.columns
+    table
+      thead
+        tr
+          th Event
+          th User
+      tbody
+        - @versions.each do |v|
+          tr
+            td = v.event
+            td

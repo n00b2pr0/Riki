@@ -1,12 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails'
+gem 'protected_attributes'
+gem 'pg'
 
-gem 'mysql2'
-
-gem 'therubyracer'
+# front end
 gem 'jquery-rails'
 gem 'sass-rails'
+gem 'coffee-script'
+
+# templates
+gem 'slim'
 
 # revisions
 gem 'paper_trail'
@@ -15,6 +19,3 @@ gem 'paper_trail'
 gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
-
-
-

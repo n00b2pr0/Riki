@@ -1,0 +1,23 @@
+.row
+  .six.columns
+    h3 Edit
+
+    = form_for @page, html: { class: "form form-stacked" } do |f|
+      .medium.danger.btn
+        = f.submit class: ""
+
+      .field
+        = f.text_field :title, placeholder: 'Title', class: 'input'
+      
+      .field
+        = f.text_area :body, class: "input textarea page-body", rows: 15
+
+      label Tags
+      .field
+        input type="text" name="tags" class="tag_list" value=@tags
+      .medium.danger.btn
+        = f.submit class: ""
+
+  .six.columns
+    h3 Preview
+    .preview
