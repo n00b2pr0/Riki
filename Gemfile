@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'protected_attributes'
 gem 'pg'
+gem 'unicorn'
 
 # front end
 gem 'jquery-rails'
