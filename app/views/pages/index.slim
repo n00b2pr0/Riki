@@ -8,9 +8,9 @@
           = search_form_for @q do |f|
             .field
               = f.text_field :title_or_body_cont, class: 'input', placeholder: 'Search'
-
-    ul
-      - @pages.each do |p|
-        li
+    
+    - @grouped.each do |g|
+      h3 = Group.find(g.first.group_id).try(:name) rescue ''
+      - g.each do |p|
           .large.default.btn.block
             = link_to p.title, page_path(p)

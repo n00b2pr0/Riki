@@ -1,8 +1,9 @@
 class Page < ActiveRecord::Base
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :group_id
   has_paper_trail
 
   has_many :tags
+  belongs_to :group
 
   def self.pages_by_tag(string)
     pages = []

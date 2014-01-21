@@ -7,6 +7,12 @@
 
 .row
   .twelve.columns
-    h3.page-header = @page.title
+    .page-header
+      .row
+        .three.columns
+          h3 = @page.title
+        .five.columns.push_four
+          h4 = @group.try(:name)
+
     .page
       = markdown(@page.body)

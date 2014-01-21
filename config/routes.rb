@@ -1,5 +1,7 @@
 Riki::Application.routes.draw do
   
+  resources :groups
+
   resources :pages
   
   get "page/:id/history" => "pages#history", :as => "history"

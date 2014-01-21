@@ -1,0 +1,9 @@
+.row
+  .twelve.columns
+
+    = form_for @group, html: { class: "form form-stacked" } do |f|
+      .field
+        = f.text_field :name, class: "input textarea page-body"
+
+      .medium.danger.btn
+        = f.submit class: ""

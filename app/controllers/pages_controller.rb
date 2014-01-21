@@ -2,10 +2,12 @@ class PagesController < ApplicationController
   def index
     @q = Page.search(params[:q])
     @pages = @q.result(distinct: true)
+    @grouped = @pages.group_by { |p| p.group_id }.values
   end
 
   def show
     @page = Page.find(params[:id])
+    @group = Group.find(@page.group_id) rescue nil
   end
 
   def new
@@ -15,7 +17,6 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(params[:page])
     if @page.save
-      @page.add_tags(params[:tags])
       redirect_to page_path(@page), :notice => "page saved"
     else
       redirect_to new_page_path, :notice => "page not saved" 
@@ -24,18 +25,11 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
-    @tags = ""
-    @page.tags.each do |t|
-      @tags << t.tag_name
-      @tags << " "
-    end
   end
 
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      @page.delete_tags
-      @page.add_tags(params[:tags])
       redirect_to page_path(@page), :notice => "page saved #{undo_link(@page)}"
     else
       redirect_to new_page_path, :notice => "page not saved" 
