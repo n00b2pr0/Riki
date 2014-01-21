@@ -11,6 +11,8 @@
     
     - @grouped.each do |g|
       h3 = Group.find(g.first.group_id).try(:name) rescue ''
-      - g.each do |p|
-          .large.default.btn.block
-            = link_to p.title, page_path(p)
+      ul
+        - g.each do |p|
+          li
+            .large.default.btn.block
+              = link_to p.title, page_path(p)
