@@ -20,7 +20,7 @@
 
 .preview, .page {
   li { list-style-type: disc; margin-left: 20px; }
-  pre { font-family: Consolas; border: 1px solid #DDDDDD; padding: 10px; border-radius: 5px; }
+  pre, code.highlight { font-family: Consolas; border: 1px solid #DDDDDD; padding: 10px; border-radius: 5px; overflow: auto; }
 }
 
 .sub.navbar {
