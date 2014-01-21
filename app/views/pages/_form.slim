@@ -3,8 +3,6 @@
     h3 Edit
 
     = form_for @page, html: { class: "form form-stacked" } do |f|
-      .medium.danger.btn
-        = f.submit class: ""
 
       .field
         = f.text_field :title, placeholder: 'Title', class: 'input'
