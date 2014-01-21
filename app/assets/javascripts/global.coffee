@@ -16,7 +16,8 @@ $ ->
 
 
 
-  loadPreview()
+  if $('.page-body').length > 0
+    loadPreview()
   
   $('.page-body').on 'keyup', () ->
     loadPreview()

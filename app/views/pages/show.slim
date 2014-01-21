@@ -2,7 +2,7 @@
   .row
     ul.twelve.columns
       li: .medium.metro.round.btn = link_to "Edit Page", edit_page_path(@page), class: ''
-      li: .medium.metro.round.btn = link_to "Delete Page", page_path(@page), :method => :delete, class: ''
+      li: .medium.metro.round.btn = link_to "Delete Page", page_path(@page), method: :delete, data: { confirm: 'Are you sure?' }, class: ''
       li: .medium.metro.round.btn = link_to "Page History", history_path(@page), class: ''
 
 .row

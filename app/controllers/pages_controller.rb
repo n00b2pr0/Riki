@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.all
+    @q = Page.search(params[:q])
+    @pages = @q.result(distinct: true)
   end
 
   def show
@@ -44,7 +45,7 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id])
     if @page.destroy
-      redirect_to root_path, :notice => "page deleted #{undo_link}"
+      redirect_to root_path, :notice => "page deleted"
     else
       redirect_to root_path, :notice => "page not deleted"
     end

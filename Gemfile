@@ -13,6 +13,9 @@ gem 'coffee-script'
 # templates
 gem 'slim'
 
+# searching
+gem 'ransack'
+
 # revisions
 gem 'paper_trail'
 
