@@ -4,6 +4,7 @@ gem 'rails'
 gem 'protected_attributes'
 gem 'pg'
 gem 'unicorn'
+gem 'rails_12factor'
 
 # front end
 gem 'jquery-rails'
