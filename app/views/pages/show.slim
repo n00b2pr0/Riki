@@ -5,10 +5,10 @@
       li: .medium.metro.round.btn = link_to "Delete Page", page_path(@page), method: :delete, data: { confirm: 'Are you sure?' }, class: ''
       li: .medium.metro.round.btn = link_to "Page History", history_path(@page), class: ''
 
-.row
+.row.wide
   .twelve.columns
     .page-header
-      .row
+      .row.wide
         .three.columns
           h3 = @page.title
         .five.columns.push_four

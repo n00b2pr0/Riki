@@ -11,6 +11,10 @@
 // now import
 @import 'gumby';
 @import 'tags';
+
+.row.wide {
+  max-width: 100%;
+}
  
 .websymbols {
   font-family: "websymbols";
@@ -20,7 +24,7 @@
 
 .preview, .page {
   li { list-style-type: disc; margin-left: 20px; }
-  pre, code.highlight { font-family: Consolas; border: 1px solid #DDDDDD; padding: 10px; border-radius: 5px; overflow: auto; }
+  code { font-family: Consolas; border: 1px solid #DDDDDD; padding: 6px; border-radius: 5px; overflow: auto; background-color: #EFEFEF; }
 }
 
 .sub.navbar {

@@ -1,13 +1,11 @@
 $ ->
 
-  converter = new Showdown.converter({ extensions: 'github' })
-
   loadPreview = () ->
     pageBody = $('.page-body')
     text = pageBody.val()
 
     preview = $('.preview')
-    preview.html(converter.makeHtml(text))
+    preview.html(markdown.toHTML(text))
     
     height = preview.height()
     if height > 0
